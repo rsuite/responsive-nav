@@ -1,4 +1,4 @@
-/*! Last update: Wed Jan 09 2019 18:04:53 GMT+0800 (CST) */
+/*! Last update: Wed Jan 09 2019 18:58:58 GMT+0800 (CST) */
 /* stylelint-disable */
 /* stylelint-disable */
 body {
@@ -18823,7 +18823,6 @@ textarea.rs-picker-menu .rs-picker-search-bar .rs-picker-search-bar-input {
   padding: 10px 60px 60px 60px;
   width: 70%;
   border: 1px solid #ddd;
-  margin: 0 auto;
   margin-top: 50px;
 }
 .example h2 {
