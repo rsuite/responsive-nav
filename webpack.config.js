@@ -18,7 +18,7 @@ const plugins = [
   }),
   extractLess,
   new HtmlwebpackPlugin({
-    title: 'Tab Nav',
+    title: 'Responsive Nav',
     filename: 'index.html',
     template: 'docs/index.html',
     inject: true,

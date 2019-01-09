@@ -12,7 +12,7 @@ const iconStyle = {
 
 function getUnhandledProps(props) {
   const nextProps = {};
-  const keys = Object.keys(TabNav.propTypes);
+  const keys = Object.keys(ResponsiveNav.propTypes);
   Object.entries(props).forEach(([key, value]) => {
     if (keys.indexOf(key) === -1) {
       nextProps[key] = value;
@@ -21,7 +21,7 @@ function getUnhandledProps(props) {
   return nextProps;
 }
 
-class TabNav extends React.Component {
+class ResponsiveNav extends React.Component {
   static propTypes = {
     removable: PropTypes.bool,
     onItemRemove: PropTypes.func,
@@ -112,7 +112,7 @@ class TabNav extends React.Component {
     };
     return (
       <div ref={this.bindWrapperRef} style={styles}>
-        <Nav appearance="tabs" {...rest}>
+        <Nav {...rest}>
           {removable
             ? children.map((item, key) =>
                 React.cloneElement(item, {
@@ -180,10 +180,15 @@ class TabNav extends React.Component {
               const {
                 children: itemChildren,
                 classPrefix,
+                eventKey,
                 ...itemRest
               } = child.props;
               return (
-                <Dropdown.Item key={index} {...itemRest}>
+                <Dropdown.Item
+                  key={eventKey || index}
+                  eventKey={eventKey}
+                  {...itemRest}
+                >
                   {itemChildren}
                 </Dropdown.Item>
               );
@@ -240,7 +245,7 @@ class TabNav extends React.Component {
     return (
       <div>
         {this.renderPlaceholder()}
-        <Nav appearance="tabs" activeKey={activeKey} {...rest}>
+        <Nav activeKey={activeKey} {...rest}>
           {this.renderChildren()}
         </Nav>
       </div>
@@ -248,6 +253,6 @@ class TabNav extends React.Component {
   }
 }
 
-TabNav.Item = Nav.Item;
+ResponsiveNav.Item = Nav.Item;
 
-export default TabNav;
+export default ResponsiveNav;

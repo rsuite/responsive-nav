@@ -1,41 +1,64 @@
-import React from "react";
-import TabNav from "../src";
+import React from 'react';
+import Nav from '../src';
 
+// appearance="tabs"
 class DefaultExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeKey: "A"
+      activeKey: 'A',
+      items: [
+        { eventKey: 'A', label: 'Item A' },
+        { eventKey: 'B', label: 'Item B' },
+        { eventKey: 'C', label: 'Item C' },
+        { eventKey: 'D', label: 'Item D' },
+        { eventKey: 'E', label: 'Item E' },
+        { eventKey: 'F', label: 'Item F' },
+        { eventKey: 'G', label: 'Item G' },
+        { eventKey: 'H', label: 'Item H' },
+        { eventKey: 'I', label: 'Item I' },
+        { eventKey: 'J', label: 'Item J' },
+        { eventKey: 'K', label: 'Item K' },
+        { eventKey: 'L', label: 'Item L' },
+        { eventKey: 'M', label: 'Item M' },
+        { eventKey: 'N', label: 'Item N' }
+      ]
     };
   }
+  handleSelect = eventKey => {
+    this.setState({
+      activeKey: eventKey
+    });
+  };
   render() {
+    const { activeKey, items } = this.state;
+    const children = items.map(item => (
+      <Nav.Item key={item.eventKey} eventKey={item.eventKey}>
+        {item.label}
+      </Nav.Item>
+    ));
     return (
       <div className="example">
         <h2>Default</h2>
-        <TabNav
-          activeKey={this.state.activeKey}
-          onSelect={eventKey => {
-            this.setState({
-              activeKey: eventKey
-            });
-          }}
+        <Nav activeKey={activeKey} onSelect={this.handleSelect}>
+          {children}
+        </Nav>
+        <hr />
+        <Nav
+          activeKey={activeKey}
+          onSelect={this.handleSelect}
+          appearance="tabs"
         >
-          <TabNav.Item eventKey="A">Item A</TabNav.Item>
-          <TabNav.Item eventKey="B">Item B</TabNav.Item>
-          <TabNav.Item eventKey="C">Item C</TabNav.Item>
-          <TabNav.Item eventKey="D">Item D</TabNav.Item>
-          <TabNav.Item eventKey="E">Item E</TabNav.Item>
-          <TabNav.Item eventKey="F">Item F</TabNav.Item>
-          <TabNav.Item eventKey="G">Item G</TabNav.Item>
-          <TabNav.Item eventKey="H">Item H</TabNav.Item>
-          <TabNav.Item eventKey="I">Item I</TabNav.Item>
-          <TabNav.Item eventKey="J">Item J</TabNav.Item>
-          <TabNav.Item eventKey="K">Item K</TabNav.Item>
-          <TabNav.Item eventKey="L">Item L</TabNav.Item>
-          <TabNav.Item eventKey="M">Item M</TabNav.Item>
-          <TabNav.Item eventKey="N">Item N</TabNav.Item>
-          <TabNav.Item eventKey="O">Item O</TabNav.Item>
-        </TabNav>
+          {children}
+        </Nav>
+        <hr />
+        <Nav
+          activeKey={activeKey}
+          onSelect={this.handleSelect}
+          appearance="subtle"
+        >
+          {children}
+        </Nav>
       </div>
     );
   }

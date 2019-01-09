@@ -1,3 +1,3 @@
-import TabNav from './TabNav';
+import ResponsiveNav from './ResponsiveNav';
 
-export default TabNav;
+export default ResponsiveNav;

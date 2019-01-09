@@ -1,4 +1,4 @@
-# TabNav
+# Responsive Nav
 
 A tab component based on rsuite nav enhancements.
 
@@ -10,22 +10,22 @@ A tab component based on rsuite nav enhancements.
 ## Installation
 
 ```
-npm install @rsuite/tab-nav --save
+npm install @rsuite/responsive-nav --save
 ```
 
 ## Usage
 
 ```js
-import TabNav from "@rsuite/tab-nav";
+import Nav from "@rsuite/responsive-nav";
 const App = () => {
   return (
-    <TabNav>
-      <TabNav.Item eventKey="A">Item A</TabNav.Item>
-      <TabNav.Item eventKey="B">Item B</TabNav.Item>
-      <TabNav.Item eventKey="C">Item C</TabNav.Item>
-      <TabNav.Item eventKey="D">Item D</TabNav.Item>
-      <TabNav.Item eventKey="E">Item E</TabNav.Item>
-    </TabNav>
+    <Nav>
+      <Nav.Item eventKey="A">Item A</Nav.Item>
+      <Nav.Item eventKey="B">Item B</Nav.Item>
+      <Nav.Item eventKey="C">Item C</Nav.Item>
+      <Nav.Item eventKey="D">Item D</Nav.Item>
+      <Nav.Item eventKey="E">Item E</Nav.Item>
+    </Nav>
   );
 };
 
@@ -34,7 +34,7 @@ ReactDOM.render(<App />, mountNode);
 
 ## Props
 
-`TabNav` extends all the props of [`Nav`](https://rsuitejs.com/en/components/nav) and also supports:
+`ResponsiveNav` extends all the props of [`Nav`](https://rsuitejs.com/en/components/nav) and also supports:
 
 
 

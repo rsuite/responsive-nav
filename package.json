@@ -1,6 +1,6 @@
 {
-  "name": "@rsuite/tab-nav",
-  "version": "0.0.2",
+  "name": "@rsuite/responsive-nav",
+  "version": "0.0.1",
   "description": "A tab component based on rsuite nav enhancements",
   "main": "lib",
   "scripts": {
