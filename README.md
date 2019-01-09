@@ -1,6 +1,6 @@
 # Responsive Nav
 
-A tab component based on rsuite nav enhancements.
+A responsive navigation component based on rsuite navigation enhancements.
 
 ## features
 

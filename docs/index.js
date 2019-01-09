@@ -9,11 +9,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="page">
-        <h1>Tab Nav</h1>
-        <p>A tab component based on rsuite nav enhancements </p>
+        <h1>Responsive Nav</h1>
         <p>
-          <a href="https://github.com/rsuite/tab-nav">
-            https://github.com/rsuite/tab-nav
+          A responsive navigation component based on rsuite navigation
+          enhancements
+        </p>
+        <p>
+          <a href="https://github.com/rsuite/responsive-nav">
+            https://github.com/rsuite/responsive-nav
           </a>
         </p>
         <hr />

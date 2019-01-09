@@ -1,7 +1,7 @@
 {
   "name": "@rsuite/responsive-nav",
   "version": "0.0.1",
-  "description": "A tab component based on rsuite nav enhancements",
+  "description": "A responsive navigation component based on rsuite navigation enhancements",
   "main": "lib",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server  --inline --progress --colors --port 3100 --host 0.0.0.0 ",
