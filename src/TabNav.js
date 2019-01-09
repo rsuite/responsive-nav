@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
-import bindElementResize, { unbind } from "element-resize-event";
-import { Nav, Dropdown, Icon, DOMHelper as _ } from "rsuite";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import bindElementResize, { unbind } from 'element-resize-event';
+import { Nav, Dropdown, Icon, DOMHelper as _ } from 'rsuite';
 
 const iconStyle = {
   fontSize: 12,
@@ -26,7 +26,13 @@ class TabNav extends React.Component {
     removable: PropTypes.bool,
     onItemRemove: PropTypes.func,
     activeKey: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
+    moreText: PropTypes.node,
+    moreProps: PropTypes.object
+  };
+
+  static defaultProps = {
+    moreText: 'More'
   };
   constructor(props) {
     super(props);
@@ -61,7 +67,7 @@ class TabNav extends React.Component {
   }
 
   handleResize = () => {
-    const items = this.wrapper.querySelectorAll(".rs-nav-item");
+    const items = this.wrapper.querySelectorAll('.rs-nav-item');
     const width = _.getWidth(this.wrapper);
     let contentWidth = 0;
     let itemWidthList = [];
@@ -102,7 +108,7 @@ class TabNav extends React.Component {
     const rest = getUnhandledProps(this.props);
     const styles = {
       height: 0,
-      overflow: "hidden"
+      overflow: 'hidden'
     };
     return (
       <div ref={this.bindWrapperRef} style={styles}>
@@ -121,7 +127,7 @@ class TabNav extends React.Component {
   }
   renderChildren() {
     const { width, contentWidth, itemWidthList, moreWidth } = this.state;
-    const { children, activeKey, removable } = this.props;
+    const { children, activeKey, removable, moreText, moreProps } = this.props;
     let items = [];
     if (contentWidth <= width) {
       items = children;
@@ -164,7 +170,12 @@ class TabNav extends React.Component {
         }
 
         items.push(
-          <Dropdown title="More" key="more" ref={this.bindMoreItemRef}>
+          <Dropdown
+            {...moreProps}
+            title={moreText}
+            key="more"
+            ref={this.bindMoreItemRef}
+          >
             {dropdownItems.map((child, index) => {
               const {
                 children: itemChildren,
@@ -184,7 +195,7 @@ class TabNav extends React.Component {
 
     if (removable) {
       return items.map((item, key) => {
-        if (item.type.displayName === "NavItem") {
+        if (item.type.displayName === 'NavItem') {
           return React.cloneElement(item, {
             key,
             children: this.renderIcon(item)
@@ -204,7 +215,7 @@ class TabNav extends React.Component {
     if (activeKey === eventKey) {
       nextIconStyle = Object.assign(
         {
-          color: "#f44336"
+          color: '#f44336'
         },
         iconStyle
       );
@@ -212,7 +223,7 @@ class TabNav extends React.Component {
 
     return (
       <React.Fragment>
-        {item.props.children}{" "}
+        {item.props.children}{' '}
         <Icon
           onClick={this.handleRemove.bind(this, eventKey)}
           icon="close"

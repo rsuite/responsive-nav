@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'rsuite';
+import { Button, Icon } from 'rsuite';
 import TabNav from '../src';
 
 function getKey() {
@@ -32,6 +32,8 @@ class RemovableExample extends React.Component {
         <h2>Removable</h2>
         <TabNav
           removable
+          moreText={<Icon icon="more" />}
+          moreProps={{ noCaret: true }}
           activeKey={this.state.activeKey}
           onSelect={eventKey => {
             this.setState({
@@ -40,10 +42,7 @@ class RemovableExample extends React.Component {
           }}
           onItemRemove={eventKey => {
             const { items } = this.state;
-            items.splice(
-              items.map(item => item.eventKey).indexOf(eventKey),
-              1
-            );
+            items.splice(items.map(item => item.eventKey).indexOf(eventKey), 1);
             this.setState({
               items,
               activeKey: items[0] ? items[0].eventKey : null

@@ -40,9 +40,10 @@ ReactDOM.render(<App />, mountNode);
 
 | Property     | Type`(Default)`  | Description                                 |
 | ------------ | ---------------- | ------------------------------------------- |
+| moreProps    | object           | More drop-down menu props                   |
+| moreText     | React.Node       | More text displayed on the drop-down        |
 | onItemRemove | (eventKey)=>void | The callback function when removing options |
 | removable    | boolean          | Options can be removed                      |
-
 
 
 ## License

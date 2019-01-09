@@ -10,6 +10,12 @@ class App extends React.Component {
     return (
       <div className="page">
         <h1>Tab Nav</h1>
+        <p>A tab component based on rsuite nav enhancements </p>
+        <p>
+          <a href="https://github.com/rsuite/tab-nav">
+            https://github.com/rsuite/tab-nav
+          </a>
+        </p>
         <hr />
         <DefaultExample />
         <hr />
