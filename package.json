@@ -1,6 +1,6 @@
 {
   "name": "@rsuite/responsive-nav",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A responsive navigation component based on rsuite navigation enhancements",
   "main": "lib",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rsuite/schema-form.git"
+    "url": "git+https://github.com/rsuite/responsive-nav.git"
   },
   "files": [
     "CHANGELOG.md",
@@ -29,9 +29,9 @@
   "author": "simonguo.2009@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rsuite/schema-form/issues"
+    "url": "https://github.com/rsuite/responsive-nav/issues"
   },
-  "homepage": "https://github.com/rsuite/schema-form#readme",
+  "homepage": "https://github.com/rsuite/responsive-nav#readme",
   "peerDependencies": {
     "rsuite": "^3.5.2"
   },
