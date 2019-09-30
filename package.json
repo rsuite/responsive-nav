@@ -1,6 +1,6 @@
 {
   "name": "@rsuite/responsive-nav",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A responsive navigation component based on rsuite navigation enhancements",
   "main": "lib",
   "scripts": {
@@ -33,16 +33,32 @@
   },
   "homepage": "https://github.com/rsuite/responsive-nav#readme",
   "peerDependencies": {
-    "rsuite": "^3.7.5"
+    "rsuite": "^3.7.5 || >=4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.7.6",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
     "css-loader": "^2.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
@@ -60,14 +76,20 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^3.1.3",
-    "rsuite": "^3.7.5",
+    "rsuite": "^4.0.2",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "core-js": "3",
     "element-resize-event": "^3.0.3",
     "prop-types": "^15.6.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 10"
+  ]
 }
