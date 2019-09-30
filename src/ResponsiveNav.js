@@ -1,3 +1,4 @@
+import 'core-js/modules/es.array.flat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -55,8 +56,11 @@ class ResponsiveNav extends React.Component {
         moreWidth: _.getWidth(ReactDOM.findDOMNode(this.moreItem))
       });
     }
-
-    if (prevProps.children.length !== this.props.children.length) {
+    if (
+      Array.isArray(prevProps.children) &&
+      Array.isArray(this.props.children) &&
+      prevProps.children.flat().length !== this.props.children.flat().length
+    ) {
       this.handleResize();
     }
   }
