@@ -166,7 +166,7 @@ class ResponsiveNav extends React.Component {
         }
 
         const activeItem = dropdownItems.find(
-          item => item.props.eventKey === activeKey
+          item => item && item.props.eventKey === activeKey
         );
 
         if (activeItem) {
@@ -181,6 +181,9 @@ class ResponsiveNav extends React.Component {
             ref={this.bindMoreItemRef}
           >
             {dropdownItems.map((child, index) => {
+              if (!child) {
+                return null;
+              }
               const {
                 children: itemChildren,
                 classPrefix,
