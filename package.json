@@ -1,6 +1,6 @@
 {
   "name": "@rsuite/responsive-nav",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A responsive navigation component based on rsuite navigation enhancements",
   "main": "lib",
   "types": "index.d.ts",
@@ -19,7 +19,8 @@
   "files": [
     "CHANGELOG.md",
     "lib",
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "keywords": [
     "tab",
@@ -34,6 +35,8 @@
   },
   "homepage": "https://github.com/rsuite/responsive-nav#readme",
   "peerDependencies": {
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0",
     "rsuite": "^3.7.5 || >=4.0.0"
   },
   "devDependencies": {
@@ -81,7 +84,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "core-js": "3",
