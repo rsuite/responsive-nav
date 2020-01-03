@@ -1,7 +1,8 @@
+import * as React from 'react';
 import Nav, { NavProps } from 'rsuite/es/Nav/Nav';
 import { DropdownMenuProps } from 'rsuite/es/Dropdown/DropdownMenu';
 
-interface Props<T> extends NavProps<T> {
+export interface Props<T> extends NavProps<T> {
   /**
    * More drop-down menu props
    */
@@ -23,8 +24,8 @@ interface Props<T> extends NavProps<T> {
   removable?: boolean;
 }
 
-class ResponsiveNav<T> extends React.Component<Props<T>> {
-  static Item: typeof Nav['Item'];
+export class ResponsiveNav<T> extends React.Component<Props<T>> {
+  static Item: typeof Nav.Item;
 }
 
 export default ResponsiveNav;
