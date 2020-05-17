@@ -35,6 +35,7 @@ class ResponsiveNav extends React.Component {
   static defaultProps = {
     moreText: 'More'
   };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -44,12 +45,14 @@ class ResponsiveNav extends React.Component {
       moreWidth: 0
     };
   }
+
   componentDidMount() {
     if (this.wrapper) {
       this.handleResize();
       bindElementResize(this.wrapper, this.handleResize);
     }
   }
+
   componentDidUpdate(prevProps) {
     if (this.moreItem && this.state.moreWidth === 0) {
       this.setState({
@@ -64,6 +67,7 @@ class ResponsiveNav extends React.Component {
       this.handleResize();
     }
   }
+
   componentWillUnmount() {
     if (this.wrapper) {
       unbind(this.wrapper);
@@ -76,7 +80,7 @@ class ResponsiveNav extends React.Component {
     let contentWidth = 0;
     let itemWidthList = [];
 
-    items.forEach(element => {
+    [...items].forEach(element => {
       let w = _.getWidth(element);
       contentWidth += w;
       itemWidthList.push(w);
