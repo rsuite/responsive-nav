@@ -1,6 +1,6 @@
 {
   "name": "@rsuite/responsive-nav",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A responsive navigation component based on rsuite navigation enhancements",
   "main": "lib",
   "types": "index.d.ts",
