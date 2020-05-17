@@ -80,7 +80,7 @@ class ResponsiveNav extends React.Component {
     let contentWidth = 0;
     let itemWidthList = [];
 
-    [...items].forEach(element => {
+    Array.from(items).forEach(element => {
       let w = _.getWidth(element);
       contentWidth += w;
       itemWidthList.push(w);
