@@ -211,10 +211,13 @@ class ResponsiveNav extends React.Component {
 
     if (removable) {
       return items.map((item, key) => {
-        return React.cloneElement(item, {
-          key,
-          children: this.renderIcon(item),
-        });
+        if (~item.type.displayName.indexOf('NavItem')) {
+          return React.cloneElement(item, {
+            key,
+            children: this.renderIcon(item),
+          });
+        }
+        return item;
       });
     }
 
