@@ -8,7 +8,7 @@ import { Nav, Dropdown, Icon, DOMHelper as _ } from 'rsuite';
 const iconStyle = {
   fontSize: 12,
   marginLeft: 4,
-  width: 12
+  width: 12,
 };
 
 function getUnhandledProps(props) {
@@ -29,11 +29,11 @@ class ResponsiveNav extends React.Component {
     activeKey: PropTypes.string,
     children: PropTypes.node,
     moreText: PropTypes.node,
-    moreProps: PropTypes.object
+    moreProps: PropTypes.object,
   };
 
   static defaultProps = {
-    moreText: 'More'
+    moreText: 'More',
   };
 
   constructor(props) {
@@ -42,7 +42,7 @@ class ResponsiveNav extends React.Component {
       width: 0,
       contentWidth: 0,
       itemWidthList: [],
-      moreWidth: 0
+      moreWidth: 0,
     };
   }
 
@@ -56,7 +56,7 @@ class ResponsiveNav extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.moreItem && this.state.moreWidth === 0) {
       this.setState({
-        moreWidth: _.getWidth(ReactDOM.findDOMNode(this.moreItem))
+        moreWidth: _.getWidth(ReactDOM.findDOMNode(this.moreItem)),
       });
     }
     if (
@@ -80,7 +80,7 @@ class ResponsiveNav extends React.Component {
     let contentWidth = 0;
     let itemWidthList = [];
 
-    Array.from(items).forEach(element => {
+    Array.from(items).forEach((element) => {
       let w = _.getWidth(element);
       contentWidth += w;
       itemWidthList.push(w);
@@ -89,7 +89,7 @@ class ResponsiveNav extends React.Component {
     this.setState({
       width,
       contentWidth,
-      itemWidthList
+      itemWidthList,
     });
   };
 
@@ -102,12 +102,12 @@ class ResponsiveNav extends React.Component {
 
   wrapper = null;
 
-  bindWrapperRef = ref => {
+  bindWrapperRef = (ref) => {
     this.wrapper = ref;
   };
   moreItem = null;
 
-  bindMoreItemRef = ref => {
+  bindMoreItemRef = (ref) => {
     this.moreItem = ref;
   };
 
@@ -116,7 +116,7 @@ class ResponsiveNav extends React.Component {
     const rest = getUnhandledProps(this.props);
     const styles = {
       height: 0,
-      overflow: 'hidden'
+      overflow: 'hidden',
     };
     return (
       <div ref={this.bindWrapperRef} style={styles}>
@@ -125,7 +125,7 @@ class ResponsiveNav extends React.Component {
             ? children.map((item, key) =>
                 React.cloneElement(item, {
                   key,
-                  children: this.renderIcon(item)
+                  children: this.renderIcon(item),
                 })
               )
             : children}
@@ -170,7 +170,7 @@ class ResponsiveNav extends React.Component {
         }
 
         const activeItem = dropdownItems.find(
-          item => item && item.props.eventKey === activeKey
+          (item) => item && item.props.eventKey === activeKey
         );
 
         if (activeItem) {
@@ -211,13 +211,10 @@ class ResponsiveNav extends React.Component {
 
     if (removable) {
       return items.map((item, key) => {
-        if (item.type.displayName === 'NavItem') {
-          return React.cloneElement(item, {
-            key,
-            children: this.renderIcon(item)
-          });
-        }
-        return item;
+        return React.cloneElement(item, {
+          key,
+          children: this.renderIcon(item),
+        });
       });
     }
 
@@ -231,7 +228,7 @@ class ResponsiveNav extends React.Component {
     if (activeKey === eventKey) {
       nextIconStyle = Object.assign(
         {
-          color: '#f44336'
+          color: '#f44336',
         },
         iconStyle
       );

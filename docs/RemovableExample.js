@@ -32,6 +32,7 @@ class RemovableExample extends React.Component {
         <h2>Removable</h2>
         <TabNav
           removable
+          appearance="tabs"
           moreText={<Icon icon="more" />}
           moreProps={{ noCaret: true }}
           activeKey={this.state.activeKey}
