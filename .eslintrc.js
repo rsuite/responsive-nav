@@ -10,20 +10,20 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    mocha: true
+    mocha: true,
   },
   globals: {
-    assert: true
+    assert: true,
   },
   parser: 'babel-eslint',
-  plugins: ['react', 'babel', 'json', 'flowtype'],
+  plugins: ['react', 'babel', 'json'],
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-      experimentalObjectRestSpread: true
-    }
+      experimentalObjectRestSpread: true,
+    },
   },
   rules: {
     indent: [ERROR, 2, { SwitchCase: 1 }], //规定代码的缩进方式：2个空格
@@ -68,17 +68,5 @@ module.exports = {
     'react/prefer-stateless-function': OFF,
     'react/require-default-props': OFF,
     'react/no-find-dom-node': OFF,
-
-    /**
-     * Flowtype
-     */
-    'flowtype/define-flow-type': ERROR,
-    'flowtype/require-valid-file-annotation': OFF,
-    'flowtype/require-parameter-type': OFF,
-    'flowtype/require-return-type': OFF,
-    'flowtype/space-after-type-colon': OFF,
-    'flowtype/space-before-type-colon': OFF,
-    'flowtype/type-id-match': OFF,
-    'flowtype/use-flow-type': ERROR
-  }
+  },
 };

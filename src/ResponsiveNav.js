@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import bindElementResize, { unbind } from 'element-resize-event';
-import { Nav, Dropdown, Icon, DOMHelper as _ } from 'rsuite';
+import { Nav, Dropdown, DOMHelper as _ } from 'rsuite';
+import CloseIcon from '@rsuite/icons/Close';
 
 const iconStyle = {
   fontSize: 12,
@@ -240,9 +241,8 @@ class ResponsiveNav extends React.Component {
     return (
       <React.Fragment>
         {item.props.children}{' '}
-        <Icon
+        <CloseIcon
           onClick={this.handleRemove.bind(this, eventKey)}
-          icon="close"
           style={nextIconStyle}
         />
       </React.Fragment>
