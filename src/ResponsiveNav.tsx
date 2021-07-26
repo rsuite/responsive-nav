@@ -94,8 +94,6 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
       }
     }, [moreWidth]);
 
-    console.log(moreWidth, moreItemRef.current);
-
     useCustomCompareEffect(handleResize, [children], (prevDeps, nextDeps) => {
       const prevChildren = prevDeps[0];
       const nextChildren = nextDeps[0];
@@ -149,9 +147,15 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
                 if (!child) {
                   return null;
                 }
-                const { children: itemChildren, eventKey, ...itemRest } = child.props;
+                const {
+                  children: itemChildren,
+                  eventKey,
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                  classPrefix,
+                  ...itemRestProps
+                } = child.props;
                 return (
-                  <Dropdown.Item key={eventKey || index} eventKey={eventKey} {...itemRest}>
+                  <Dropdown.Item key={eventKey || index} eventKey={eventKey} {...itemRestProps}>
                     {itemChildren}
                   </Dropdown.Item>
                 );
