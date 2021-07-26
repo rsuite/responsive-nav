@@ -18,38 +18,36 @@ class RemovableExample extends React.Component {
         { eventKey: 'C', label: 'Item C' },
         { eventKey: 'D', label: 'Item D' },
         { eventKey: 'E', label: 'Item E' },
-        { eventKey: 'F', label: 'Item F' },
-      ],
+        { eventKey: 'F', label: 'Item F' }
+      ]
     };
   }
   render() {
     return (
       <div className="example">
         <h2>Removable</h2>
+
         <TabNav
           removable
           appearance="tabs"
           moreText={<MoreIcon />}
           moreProps={{ noCaret: true }}
           activeKey={this.state.activeKey}
-          onSelect={(eventKey) => {
+          onSelect={eventKey => {
             this.setState({
-              activeKey: eventKey,
+              activeKey: eventKey
             });
           }}
-          onItemRemove={(eventKey) => {
+          onItemRemove={eventKey => {
             const { items } = this.state;
-            items.splice(
-              items.map((item) => item.eventKey).indexOf(eventKey),
-              1
-            );
+            items.splice(items.map(item => item.eventKey).indexOf(eventKey), 1);
             this.setState({
               items,
-              activeKey: items[0] ? items[0].eventKey : null,
+              activeKey: items[0] ? items[0].eventKey : null
             });
           }}
         >
-          {this.state.items.map((item) => (
+          {this.state.items.map(item => (
             <TabNav.Item key={item.eventKey} eventKey={item.eventKey}>
               {item.label}
             </TabNav.Item>
@@ -63,10 +61,10 @@ class RemovableExample extends React.Component {
             const itemKey = getKey();
             items.push({
               eventKey: itemKey,
-              label: `Item ${itemKey}`,
+              label: `Item ${itemKey}`
             });
             this.setState({
-              items,
+              items
             });
           }}
         >

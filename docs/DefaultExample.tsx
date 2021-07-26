@@ -21,18 +21,19 @@ class DefaultExample extends React.Component {
         { eventKey: 'K', label: 'Item K' },
         { eventKey: 'L', label: 'Item L' },
         { eventKey: 'M', label: 'Item M' },
-        { eventKey: 'N', label: 'Item N' },
-      ],
+        { eventKey: 'N', label: 'Item N' }
+      ]
     };
   }
-  handleSelect = (eventKey) => {
+  handleSelect = eventKey => {
+    console.log(eventKey, 'eventKey');
     this.setState({
-      activeKey: eventKey,
+      activeKey: eventKey
     });
   };
   render() {
     const { activeKey, items } = this.state;
-    const children = items.map((item) => (
+    const children = items.map(item => (
       <Nav.Item key={item.eventKey} eventKey={item.eventKey}>
         {item.label}
       </Nav.Item>
@@ -44,19 +45,11 @@ class DefaultExample extends React.Component {
           {children}
         </Nav>
         <hr />
-        <Nav
-          activeKey={activeKey}
-          onSelect={this.handleSelect}
-          appearance="tabs"
-        >
+        <Nav activeKey={activeKey} onSelect={this.handleSelect} appearance="tabs">
           {children}
         </Nav>
         <hr />
-        <Nav
-          activeKey={activeKey}
-          onSelect={this.handleSelect}
-          appearance="subtle"
-        >
+        <Nav activeKey={activeKey} onSelect={this.handleSelect} appearance="subtle">
           {children}
         </Nav>
       </div>

@@ -10,10 +10,7 @@ class App extends React.Component {
     return (
       <div className="page">
         <h1>Responsive Nav</h1>
-        <p>
-          A responsive navigation component based on rsuite navigation
-          enhancements
-        </p>
+        <p>A responsive navigation component based on rsuite navigation enhancements</p>
         <p>
           <a href="https://github.com/rsuite/responsive-nav">
             https://github.com/rsuite/responsive-nav
