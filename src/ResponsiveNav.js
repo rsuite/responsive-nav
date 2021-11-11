@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import bindElementResize, { unbind } from 'element-resize-event';
-import { Nav, Dropdown, Icon, DOMHelper as _ } from 'rsuite';
+import { Nav, Dropdown, DOMHelper as _ } from 'rsuite';
+import Close from "@rsuite/icons/Close";
 
 const iconStyle = {
   fontSize: 12,
@@ -75,7 +76,7 @@ class ResponsiveNav extends React.Component {
   }
 
   handleResize = () => {
-    const items = this.wrapper.querySelectorAll('.rs-nav-item');
+    const items = this.wrapper.querySelectorAll('.rs-navbar-item');
     const width = _.getWidth(this.wrapper);
     let contentWidth = 0;
     let itemWidthList = [];
@@ -211,13 +212,10 @@ class ResponsiveNav extends React.Component {
 
     if (removable) {
       return items.map((item, key) => {
-        if (~item.type.displayName.indexOf('NavItem')) {
-          return React.cloneElement(item, {
-            key,
-            children: this.renderIcon(item),
-          });
-        }
-        return item;
+        return React.cloneElement(item, {
+          key,
+          children: this.renderIcon(item),
+        });
       });
     }
 
@@ -240,10 +238,9 @@ class ResponsiveNav extends React.Component {
     return (
       <React.Fragment>
         {item.props.children}{' '}
-        <Icon
-          onClick={this.handleRemove.bind(this, eventKey)}
-          icon="close"
-          style={nextIconStyle}
+        <Close
+            onClick={this.handleRemove.bind(this, eventKey)}
+            style={nextIconStyle}
         />
       </React.Fragment>
     );
