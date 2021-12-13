@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import bindElementResize, { unbind } from 'element-resize-event';
 import { Nav, Dropdown, DOMHelper as _ } from 'rsuite';
 
-import { NavProps } from 'rsuite/es/Nav/Nav';
-import { DropdownProps } from 'rsuite/es/Dropdown';
+import { NavProps } from 'rsuite/Nav';
+import { DropdownProps } from 'rsuite/Dropdown';
 import RemoveButton from './RemoveButton';
 import useCustomCompareEffect from './useCustomCompareEffect';
 
@@ -142,7 +142,13 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
           }
 
           items.push(
-            <Dropdown ref={moreItemRef} {...moreProps} title={moreText} key="more">
+            <Dropdown
+              key="more"
+              ref={moreItemRef}
+              {...moreProps}
+              title={moreText}
+              appearance="subtle"
+            >
               {dropdownItems.map((child, index) => {
                 if (!child) {
                   return null;
