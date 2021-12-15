@@ -89,8 +89,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@juggle/resize-observer": "^3.3.1",
     "@rsuite/icons": "^1.0.0",
-    "element-resize-event": "^3.0.6",
     "prop-types": "^15.6.2"
   },
   "browserslist": [
