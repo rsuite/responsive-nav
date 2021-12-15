@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import bindElementResize, { unbind } from 'element-resize-event';
+import { ResizeObserver } from '@juggle/resize-observer';
 import { Nav, Dropdown, DOMHelper as _ } from 'rsuite';
 
 import { NavProps } from 'rsuite/Nav';
@@ -55,6 +55,7 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
 
     const containerRef = useRef<HTMLDivElement>();
     const moreItemRef = useRef();
+    const resizeObserver = useRef<ResizeObserver>();
 
     const placeholderStyles = {
       height: 0,
@@ -81,10 +82,12 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
     useEffect(() => {
       if (containerRef.current) {
         handleResize();
-        bindElementResize(containerRef.current, handleResize);
+
+        resizeObserver.current = new ResizeObserver(handleResize);
+        resizeObserver.current.observe(containerRef.current);
       }
       return () => {
-        unbind(containerRef.current);
+        resizeObserver.current?.disconnect();
       };
     }, []);
 
