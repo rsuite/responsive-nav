@@ -63,6 +63,9 @@ const ResponsiveNav: ResponsiveNavComponent = React.forwardRef(
     };
 
     const handleResize = () => {
+      if (!containerRef.current) {
+        return;
+      }
       const items = containerRef.current.querySelectorAll('.rs-nav-item');
       const containerWidth = _.getWidth(containerRef.current);
       const list = [];
