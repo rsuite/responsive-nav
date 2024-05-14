@@ -1,3 +1,7 @@
+# 5.0.2
+
+- fix handleResize called for null container #41
+
 # 5.0.1
 
 - perf(resize): use ResizeObserver instead of element-resize-event
